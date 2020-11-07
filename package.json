@@ -1,0 +1,27 @@
+{
+  "name": "hacktfjs",
+  "version": "1.0.0",
+  "description": "Word Similarity using tensorflow.js",
+  "main": "index.js",
+  "author": "Jayesh Mann",
+  "license": "AGPL-3.0-or-later",
+  "private": true,
+  "dependencies": {
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.2",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  },
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node index.js",
+    "start-test": "cross-env NODE_ENV=test node index.js",
+    "dev": "cross-env NODE_ENV=development nodemon index.js",
+    "debug": "node --inspect index.js",
+    "lint": "eslint . ",
+    "lint-fix": "eslint . --fix"
+  }
+}
