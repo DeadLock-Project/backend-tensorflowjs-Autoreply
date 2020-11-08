@@ -26,8 +26,8 @@ The cat ate the mouse
 The mouse ate the cat
 `
 
-$('#input_sentences').text(input_sentences)
-$('#input_threshold').text(input_threshold)
+// $('#input_sentences').text(input_sentences)
+// $('#input_threshold').text(input_threshold)
 
 async function onClickAnalyzeSentences() {
   var list_sentences = []
@@ -187,4 +187,20 @@ async function get_similarity(list_sentences) {
   )
 }
 
-onClickAnalyzeSentences()
+// onClickAnalyzeSentences()
+
+const get_simi = sentences => {
+  return use.load().then(model => {
+    // Embed an array of sentences.
+    // const sentences = ['Hello.', 'How are you?']
+    return model.embed(sentences).then(embeddings => {
+      // `embeddings` is a 2D tensor consisting of the 512-dimensional embeddings for each sentence.
+      // So in this example `embeddings` has the shape [2, 512].
+      embeddings.print(true /* verbose */)
+      console.log(embeddings)
+      return embeddings
+    })
+  })
+}
+
+module.exports = get_simi
